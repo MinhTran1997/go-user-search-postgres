@@ -1,0 +1,20 @@
+server:
+  name: search-users
+  port: 8080
+
+sql:
+  driver: postgres
+  data_source_name: user=postgres password=bbc148562 dbname=postgres sslmode=disable
+
+log:
+  level: info
+  map:
+    time: "@timestamp"
+    msg: message
+
+middleware:
+  log: true
+  skips: /health
+  request: request
+  response: response
+  size: size
